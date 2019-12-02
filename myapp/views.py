@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from django.utils import timezone
 
+
 # Create your views here.
 def home(request):
     post = Post.objects
@@ -40,3 +41,4 @@ def delete(request, post_id):
     delete_post = Post.objects.get(id = post_id)
     delete_post.delete()
     return redirect('home')
+
